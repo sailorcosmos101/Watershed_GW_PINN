@@ -5,6 +5,13 @@ This repository provides the official implementation of the Physics-Informed Neu
 ### Abstract
 The applicability of Physics-Informed Neural Network (PINN) was investigated for watershed-scale groundwater modeling. A PINN-based 2D steady-state confined aquifer model was developed, capable of implementing hydrological components such as watershed boundaries, recharge, and baseflow as essential boundary conditions. The PINN was trained to minimize a loss function that incorporates both Darcy’s law and the boundary conditions. The PINN-based groundwater model was verified by comparison with numerical models for the same hydrogeological conditions. The model accurately reflected watershed boundaries with no-flow and constant-head conditions, demonstrating high predictive accuracy and excellent agreement with the numerical model. The model simulated recharge and baseflow effectively, confirming its ability to implement the complex and diverse hydraulic conditions required for building watershed-scale models. The model demonstrated its applicability to large-scale domains, which was enabled by scaling techniques. The applicability to island and general watersheds was confirmed by verifying its ability to learn from various polygonal domains.
 
+## Code Provenance & Acknowledgements
+The baseline 2D steady-state PINN implementation for the homogeneous Darcy flow (Laplace) equation in this repository was adapted from [PIML4PDE](https://github.com/EMSL-Computing/PIML4PDE) (Copyright © 2024, Battelle Memorial Institute), originally developed by Lal Mamud et al. at Pacific Northwest National Laboratory.
+
+This repository extends that base implementation to six watershed-scale boundary-value cases (Case 1–6) — recharge/discharge terms, non-rectangular (hexagonal/triangular) domains, sub-domain decomposition for an internal river boundary, and MODFLOW validation — developed by Yijune Choi for the manuscript "Development of Physics-Informed Neural Network for modeling a Groundwater Flow in Watershed-Scale".
+
+See [`LICENSE`](./LICENSE) for the license terms governing the base PIML4PDE code, reproduced here as required by its original license conditions.
+
 ## 1. How to Run
 ### Environment Setup (Versions of package are mentioned in requirements.txt file)
 - Framework: JAX
@@ -33,3 +40,6 @@ requirements.txt – required package and versions
 notebooks/ - jupyter notebeook (.ipynb) file which contains PINN for all cases
 
 data/ - Directory containing MODFLOW reference text files for all cases
+
+## License
+The Case 1–6 extensions in this repository are for academic/research use. The underlying base PINN framework is governed by the Battelle Memorial Institute license in [`LICENSE`](./LICENSE); any redistribution must retain that notice per its terms.
