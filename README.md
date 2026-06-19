@@ -10,7 +10,7 @@ The baseline 2D steady-state PINN implementation for the homogeneous Darcy flow 
 
 This repository extends that base implementation to six watershed-scale boundary-value cases (Case 1–6) — recharge/discharge terms, non-rectangular (hexagonal/triangular) domains, sub-domain decomposition for an internal river boundary, and MODFLOW validation — developed by Yijune Choi for the manuscript "Development of Physics-Informed Neural Network for modeling a Groundwater Flow in Watershed-Scale".
 
-See [`LICENSE`](./LICENSE) for the license terms governing the base PIML4PDE code, reproduced here as required by its original license conditions.
+See [`LICENSE`](./LICENSE.md) for the license terms governing the base PIML4PDE code, reproduced here as required by its original license conditions.
 
 ## 1. How to Run
 ### Environment Setup (Versions of package are mentioned in requirements.txt file)
